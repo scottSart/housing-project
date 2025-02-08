@@ -2,14 +2,17 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
+import os
 
 # 1. FILE PATHS
 
-PERMIT_DATA_PATH = r'C:\Users\Sarth\OneDrive\JHU\HomeEconomics\Project 2  - Relationship between Rent prices and home permits\Consolidated Dataset_v2.xlsx'
-RENTAL_DATA_PATH = r'C:\Users\Sarth\OneDrive\JHU\HomeEconomics\Project 2  - Relationship between Rent prices and home permits\Consolidated Dataset_v2.xlsx'
-APARTMENT_LIST_PATH = r'C:\Users\Sarth\OneDrive\JHU\HomeEconomics\Project 2  - Relationship between Rent prices and home permits\Apartment_List_Rent_Estimates_2024_09.csv'
-APARTMENT_LIST_2025_PATH = r'C:\Users\Sarth\OneDrive\JHU\HomeEconomics\Project 2  - Relationship between Rent prices and home permits\Apartment_List_Rent_Estimates_2025_01.csv'
-POPULATION_DATA_PATH = r'C:\Users\Sarth\Downloads\population.xlsx'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get the script's directory
+
+PERMIT_DATA_PATH = os.path.join(BASE_DIR, 'Consolidated Dataset_v2.xlsx')
+RENTAL_DATA_PATH = os.path.join(BASE_DIR, 'Consolidated Dataset_v2.xlsx')
+APARTMENT_LIST_PATH = os.path.join(BASE_DIR, 'Apartment_List_Rent_Estimates_2024_09.csv')
+APARTMENT_LIST_2025_PATH = os.path.join(BASE_DIR, 'Apartment_List_Rent_Estimates_2025_01.csv')
+POPULATION_DATA_PATH = os.path.join(BASE_DIR, 'population.xlsx')
 
 # 2. HELPER FUNCTIONS
 def cagr(start_value, end_value, num_periods):
